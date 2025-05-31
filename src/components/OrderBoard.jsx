@@ -1,0 +1,39 @@
+import NavBar from "./NavBar";
+import OrderCreate from "./OrderCreate";
+import OrderSummary from "./OrderSummary";
+import OrderReportsList from "./OrderReportsList";
+import { useState } from "react";
+
+export default function OrderBoard() {
+  const [inputValue, setInputValue] = useState({});
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue({ value });
+  };
+  console.log(inputValue);
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    setInputValue(inputValue);
+  };
+
+  return (
+    <div className="container mx-auto px-4 h-screen flex flex-col">
+      <NavBar />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 flex-grow">
+        <OrderCreate
+          handleSubmitForm={handleSubmitForm}
+          handleInputChange={handleInputChange}
+        />
+
+        <div className="md:col-span-2 h-[calc(100vh_-_130px)]">
+          <OrderSummary />
+
+          <OrderReportsList />
+        </div>
+      </div>
+    </div>
+  );
+}
