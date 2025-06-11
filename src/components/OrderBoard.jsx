@@ -41,12 +41,13 @@ const customerOrder = {
 export default function OrderBoard() {
  const [orders, setOrders] = useState(orderTables);
  const [inputText, setInputText] = useState("");
+ const [isAdd, setIsAdd] = useState(true);
 
  const [userOrder, setUserOrder] = useState(customerOrder);
 
  const [totalAmount, setTotalAmount] = useState(0);
 
- console.log(totalAmount);
+ //  console.log(typeof totalAmount);
  console.log(userOrder);
  //  console.log(orderAmounts);
 
@@ -62,7 +63,6 @@ export default function OrderBoard() {
  };
 
  const handleFoodMenu = (foodItem) => {
-  // console.log(foodItem.taka);
   const taka = foodItem.taka;
   setUserOrder((prev) => ({
    ...prev,
@@ -71,7 +71,8 @@ export default function OrderBoard() {
 
   const newAmount = [...userOrder.totalOrder, taka];
   const newTotal = newAmount.reduce((prev, curr) => prev + parseInt(curr), 0);
-  console.log(newTotal);
+  //  console.log(newTotal);
+  setTotalAmount(newTotal);
  };
 
  const handleSubmitForm = (e) => {
@@ -89,6 +90,8 @@ export default function OrderBoard() {
      handleInputChange={handleInputChange}
      handleFoodMenu={handleFoodMenu}
      handleSubmitForm={handleSubmitForm}
+     totalAmount={totalAmount}
+     isAdd={isAdd}
     />
 
     <div className="md:col-span-2 h-[calc(100vh_-_130px)]">
