@@ -1,0 +1,26 @@
+[
+  {
+      "id": "1",
+      "name": "Hamburger",
+      "src": "./assets/hamburger.svg",
+      "taka": "250"
+    },
+    {
+      "id": "2",
+      "name": "Chicken Nuggets",
+      "src": "./assets/chicken.svg",
+      "taka": "450"
+    },
+    {
+      "id": "3",
+      "name": "Submarine Sandwich",
+      "src": "./assets/submarine.svg",
+      "taka": "400"
+    },
+    {
+      "id": "4",
+      "name": "Pizza slices",
+      "src": "./assets/pizza.svg",
+      "taka": "150"
+    }
+]
