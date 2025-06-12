@@ -4,6 +4,8 @@ export default function OrderCreate({
   handleSubmitForm,
   curentOrder,
   orderItemCreate,
+  totalOrder,
+  currentTotal,
 }) {
   return (
     <div className="bg-gray-300 rounded-lg p-6 h-[calc(100vh_-_130px)]">
@@ -28,14 +30,14 @@ export default function OrderCreate({
 
         <div className="mb-4">
           <label className="block text-sm font-medium mb-2">Choose Items</label>
-          <MenuList orderItemCreate={orderItemCreate} />
+          <MenuList orderItemCreate={orderItemCreate} totalOrder={totalOrder} />
         </div>
 
         <button
           type="submit"
           className="w-full cursor-pointer bg-primary hover:bg-opacity-90 text-white font-medium py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
         >
-          Place Order (BDT 000)
+          Place Order (BDT {currentTotal})
         </button>
       </form>
     </div>

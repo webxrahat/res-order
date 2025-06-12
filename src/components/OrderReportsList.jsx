@@ -4,7 +4,7 @@ export default function OrderReportsList() {
   return (
     <div>
       <div className="flex justify-between">
-        <h2 className="text-xl font-bold mb-4">Order Reports</h2>
+        <h2 className="text-xl font-bold mb-4 text-white">Order Reports</h2>
 
         <div className="flex gap-4 items-center">
           <svg
@@ -17,11 +17,11 @@ export default function OrderReportsList() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="lucide lucide-funnel-icon lucide-funnel"
+            className="lucide lucide-funnel-icon lucide-funnel text-white"
           >
             <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z" />
           </svg>
-          <select className="appearance-none bg-zinc-900 accent-orange-600 border-none outline-none rounded-sm">
+          <select className="!border-2 !border-amber-200 text-white">
             <option>All</option>
             <option>Pending</option>
             <option>Delivered</option>
@@ -30,9 +30,9 @@ export default function OrderReportsList() {
       </div>
       <div className="bg-cardbg rounded-lg p-4">
         <div className="reports-container">
-          <table className="min-w-full">
+          <table className="min-w-full ">
             <thead>
-              <tr className="text-left text-sm">
+              <tr className="text-left text-sm text-white">
                 <th className="pb-3 font-medium">ID</th>
                 <th className="pb-3 font-medium">Customer Name</th>
                 <th className="pb-3 font-medium">Items</th>
