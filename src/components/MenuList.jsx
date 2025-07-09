@@ -20,7 +20,7 @@ export default function MenuList({ orderHandler, newOrder }) {
        </div>
        <div>
         <h3 className="font-medium text-gray-100">{item.name}</h3>
-        <p className="text-xs text-gray-300">BDT 000</p>
+        <p className="text-xs text-gray-300">BDT {item.taka}</p>
        </div>
       </div>
       <button
