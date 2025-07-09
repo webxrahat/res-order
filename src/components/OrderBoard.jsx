@@ -11,19 +11,20 @@ const initialOrder = {
 
 export default function OrderBoard() {
  const [newOrder, setNewOrder] = useState(initialOrder);
+ const [orderReport, setOrderReport] = useState({});
+
  let initialBill = 0;
  const totalOrderBill = newOrder.totalOrder.reduce((acc, curt) => {
-  console.log("acc", curt.taka);
   return acc + parseInt(curt.taka);
  }, initialBill);
-
- console.log("newOrder", newOrder);
 
  const handleTakeOrder = () => {};
 
  const curentOrder = () => {};
 
- const orderItemCreate = () => {};
+ const handleCreateOrder = (order) => {
+  console.log("order", orderReport);
+ };
 
  const orderHandler = (item) => {
   if (newOrder.userName !== "") {
@@ -57,12 +58,13 @@ export default function OrderBoard() {
      newOrder={newOrder}
      orderHandler={orderHandler}
      totalOrderBill={totalOrderBill}
+     handleCreateOrder={handleCreateOrder}
     />
 
     <div className="md:col-span-2 h-[calc(100vh_-_130px)]">
      <OrderSummary />
 
-     <OrderReportsList />
+     <OrderReportsList orderReport={orderReport} />
     </div>
    </div>
   </div>

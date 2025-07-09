@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function OrderReportsList() {
+export default function OrderReportsList({ orderReport }) {
+ const { userName } = orderReport;
+
  return (
   <div>
    <div className="flex justify-between">
@@ -34,7 +36,7 @@ export default function OrderReportsList() {
       <thead>
        <tr className="text-left text-sm ">
         <th className="pb-3 font-medium">ID</th>
-        <th className="pb-3 font-medium">Customer Name</th>
+        <th className="pb-3 font-medium">Name</th>
         <th className="pb-3 font-medium">Items</th>
         <th className="pb-3 font-medium">Amount</th>
         <th className="pb-3 font-medium">Status</th>
@@ -44,7 +46,7 @@ export default function OrderReportsList() {
       <tbody className="text-sm">
        <tr className="border-t border-gray-700">
         <td className="py-3"></td>
-        <td className="py-3"></td>
+        <td className="py-3">{userName}</td>
         <td className="py-3"></td>
         <td className="py-3"></td>
         <td className="py-3">

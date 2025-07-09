@@ -5,6 +5,7 @@ export default function OrderCreate({
  newOrder,
  orderHandler,
  totalOrderBill,
+ handleCreateOrder,
 }) {
  return (
   <div className="bg-gray-300 rounded-lg p-6 h-[calc(100vh_-_130px)]">
@@ -30,6 +31,7 @@ export default function OrderCreate({
    </div>
 
    <button
+    onClick={() => handleCreateOrder(newOrder)}
     type="submit"
     className="w-full cursor-pointer bg-primary hover:bg-opacity-90 text-white font-medium py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
    >
